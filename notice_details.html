@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>noticedetails</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="./css/jquery.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* side menu */
+        .side_menu{
+            display: inline-block;
+            position: fixed;
+            top: 60%;
+            right: -10%;
+            z-index: 9;
+        }
+        .side_menu li{
+            display: block;
+            margin-bottom: 3px;
+        }
+        .side_menu li h2{
+            font-weight: 400;
+            font-size: 13px;
+            margin: 0;
+        }
+        .side_menu li .material-icons{
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+        .side_menu .top, .side_menu .bottom{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 3px;
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+
+        /* notice info */
+        .info{
+            padding-top: 100px;
+        }
+        .info h1{
+            font-size: 38px;
+            margin-bottom: 50px;
+            color: black;
+            font-weight: bold;
+        }
+        .info .title{
+            text-align: left;
+        }
+        .info .title .line:first-child:after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            margin-bottom: 40px;
+        }
+        .info .title .line:last-child::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #c7c7c7;
+            margin-top: 40px;
+        }
+        .info .title h2{
+            font-size: 25px;
+            padding-left: 20px;
+        }
+        .info .title p{
+            padding-left: 20px;
+        }
+        .info .con{
+            text-align: left;
+            padding: 100px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_tit">
+                <div class="wrap">
+                    <div class="img">
+                        <a href="#">
+                            <img src="./img/hLogo.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li>Service</li>
+                        <li>Product</li>
+                        <li>LOGIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBox">
+                <div class="wrap">
+                    <div class="grid">
+                        <ul>
+                            <li><a href="#">서비스 소개</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">MY PAGE</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <!-- side menu -->
+        <div class="side_menu">
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="top">
+                                <span class="material-icons-round material-icons">
+                                    record_voice_over
+                                    </span>
+                                <h2>1:1문의</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="bottom">
+                                <span class="material-icons-round material-icons">
+                                    campaign
+                                    </span>
+                                <h2>NOTICE</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- notice info -->
+        <div class="info">
+            <div class="wrap">
+                <h1>공지사항</h1>
+                <div class="title">
+                    <div class="line"></div>
+                    <h2>새로운 공지사항 오픈!</h2>
+                    <p>2021.07.28</p>
+                    <div class="line"></div>
+                </div>
+                <div class="con">
+                    새로운 공지사항이 오픈되어 공지 드립니다.
+                    <br>
+                    <br>
+                    많은 이용 부탁드립니다.
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

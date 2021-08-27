@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>Register</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="./css/jquery.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* side menu */
+        .side_menu{
+            display: inline-block;
+            position: fixed;
+            top: 60%;
+            right: -15%;
+            z-index: 9;
+        }
+        .side_menu li{
+            display: block;
+            margin-bottom: 3px;
+        }
+        .side_menu li h2{
+            font-weight: 400;
+            font-size: 13px;
+            margin: 0;
+        }
+        .side_menu li .material-icons{
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+        .side_menu .top, .side_menu .bottom{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 3px;
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+
+        /* 회원가입폼 */
+        .total{
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .total h1{
+            font-size: 38px;
+            margin-bottom: 50px;
+            color: black;
+            font-weight: bold;
+        }
+        .total .line::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #8F8F91;
+            margin: 10px 0 30px;
+        }
+        table{
+            width: 100%;
+            margin: 0 auto;
+            table-layout: fixed;
+        }
+        table th, table td{
+            padding: 15px 15px 15px 20px;
+            vertical-align: middle;
+        }
+        table th{
+            background-color: #f5f5f5;
+            font-weight: 500;
+        }
+        table th span{
+            color: #629FDD;
+        }
+        table td{
+            text-align: left;
+        }
+        table td .error{
+            display: ;
+            font-size: 13px;
+            vertical-align: middle;
+            color: red;
+        }
+        .total .regist_btn{
+            padding: 8px 45px;
+            background-color: #333333;
+            color: white;
+            margin-top: 50px;
+        }
+        input{
+            width: 30%;
+            padding: 5px 0 5px 10px;
+            color: #565656;
+            vertical-align: middle;
+        }
+        table td button{
+            background-color: #ebebeb;
+            font-size: 13px;
+            padding: 2px 10px;
+            border-radius: 2px;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_tit">
+                <div class="wrap">
+                    <div class="img">
+                        <a href="#">
+                            <img src="./img/hLogo.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li>Service</li>
+                        <li>Product</li>
+                        <li>LOGIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBox">
+                <div class="wrap">
+                    <div class="grid">
+                        <ul>
+                            <li><a href="#">서비스 소개</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">MY PAGE</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="wrap">
+
+            <!-- side menu -->
+            <div class="side_menu">
+                <div class="wrap">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="top">
+                                    <span class="material-icons-round material-icons">
+                                        record_voice_over
+                                        </span>
+                                    <h2>1:1문의</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="bottom">
+                                    <span class="material-icons-round material-icons">
+                                        campaign
+                                        </span>
+                                    <h2>NOTICE</h2>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 회원가입폼 -->
+            <div class="total">
+                <div class="wrap">
+                    <h1>REGISTER</h1>
+                    <div class="line"></div>
+                    <table class="table-bordered">
+                        <colgroup>
+                            <col style="width: 15%;">
+                            <col style="width: 85%;">
+                        </colgroup>
+                        <tr>
+                            <th>아이디 <span>*</span></th>
+                            <td><input type="text" placeholder="아이디" maxlength="10"> <span class="error">숫자와 영문 조합 6~10자로 입력해 주세요.</span> (숫자, 영문 조합 6~10자)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>비밀번호 <span>*</span></th>
+                            <td><input type="password" placeholder="비밀번호" maxlength="10"> <span class="error">숫자와 영문 조합 6~10자로 입력해 주세요.</span> (숫자, 영문 조합 6~10자)</td>
+                        </tr>
+                        <tr>    
+                            <th>비밀번호 확인 <span>*</span></th>
+                            <td><input type="password" placeholder="비밀번호 확인" maxlength="10"> <span class="error">비밀번호가 일치하지 않습니다.</span> (숫자, 영문 조합 6~10자)</td>
+                        </tr>
+                        <tr>    
+                            <th>거래 비밀번호 <span>*</span></th>
+                            <td><input type="password" placeholder="거래 비밀번호" maxlength="10"> (숫자, 영문 조합 6~10자)</td>
+                        </tr>
+                        <tr>    
+                            <th>이메일 <span>*</span></th>
+                            <td><input type="text" placeholder="E-MAIL"> <button>인증</button> </td>
+                        </tr>
+                        <tr>    
+                            <th>이메일 인증 <span>*</span></th>
+                            <td><input type="text" placeholder="인증코드"> <button>확인</button></td>
+                        </tr>
+                    </table>
+                    <button class="regist_btn">회원가입</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>LOGIN</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="./css/jquery.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        .total{
+            width: 20%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+       .total h1{
+            font-size: 40px;
+            margin-bottom: 50px;
+        }
+        .total input{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            padding: 8px 0 8px 10px;
+            color: #8F8F91;
+        }
+        .total button{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 18px;
+            margin: 30px 0 30px;
+            background-color: #333333;
+            color: white;
+        }
+        .total .line::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 1px;
+            background-color: #8F8F91;
+            margin: 10px 0 30px;
+        }
+        main ul li::after{
+            content: "";
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            background-color: #767676;
+            margin: 0 15px;
+        }
+        main ul li:last-child:after{
+            display: none;
+        }
+        main ul li a{
+            font-size: 12px;
+        }
+        main ul li:hover a{
+            color: #8F8F91;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_tit">
+                <div class="wrap">
+                    <div class="img">
+                        <a href="#">
+                            <img src="./img/hLogo.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li>Service</li>
+                        <li>Product</li>
+                        <li>LOGIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBox">
+                <div class="wrap">
+                    <div class="grid">
+                        <ul>
+                            <li><a href="#">서비스 소개</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <div class="wrap">
+            <div class="total">
+                <h1>LOGIN</h1>
+                <input type="text" placeholder="아이디" maxlength="10">
+                <input type="password" placeholder="비밀번호" maxlength="10">
+                <button>Log In</button>
+                <div class="line"></div>
+                <ul>
+                    <li><a href="#">아이디찾기</a></li>
+                    <li><a href="#">비밀번호찾기</a></li>
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

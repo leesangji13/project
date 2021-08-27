@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>COMPANY</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="./css/jquery.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+        /* side menu */
+        .side_menu{
+            display: inline-block;
+            position: fixed;
+            top: 60%;
+            right: -10%;
+            z-index: 9;
+        }
+        .side_menu li{
+            display: block;
+            margin-bottom: 3px;
+        }
+        .side_menu li h2{
+            font-weight: 400;
+            font-size: 13px;
+        }
+        .side_menu li .material-icons{
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+        .side_menu .top, .side_menu .bottom{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 3px;
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+        .side_menu .bottom{
+            
+        }
+
+        /* swiper */
+        .swiper-container{
+            position: relative;
+        }
+        .mainSlider .slide .swiper-slide{
+            width: 100%;
+            height: 470px;
+            position: relative;
+        }
+        .mainSlider .slide .swiper-slide:first-child{
+            background-image: url(./img/mainBanner_01.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .mainSlider .slide .swiper-slide:last-child{
+            background-image: url(./img/mainBanner_02.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .mainSlider .pagin{
+            position: absolute;
+            bottom: 10px;
+        }
+        .mainSlider .pagin .swiper-pagination-bullet{
+            width: 50px;
+            height: 2px;
+            opacity: 1;
+            background-color: white;
+            border-radius: 20px;
+            box-sizing: border-box;
+            margin: 0 2px;
+        }
+        .mainSlider .pagin .swiper-pagination-bullet.swiper-pagination-bullet-active{
+            background-color: black;
+            height: 2px;
+        }
+        /* 공지사항 롤링 */
+        .notice{
+            width: 100%;
+            height: 60px;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #E0DFE1;
+        }
+        .rolling{
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+        .rolling li{
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            position: relative;
+        }
+        .rolling li h3{
+            font-weight: 400;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            vertical-align: text-bottom;
+        }
+        .rolling li span{
+            vertical-align: text-bottom;
+            font-size: 17px;
+            margin-right: 10px;
+        }
+        /* con01 */
+        .con01{
+            width: 100%;
+            height: auto;
+            padding: 300px 0;
+            position: relative;
+        }
+        .con01 .left{
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .con01 .left h1{
+            vertical-align: baseline;
+            font-weight: bolder;
+            font-size: 50px;
+            display: inline-block;
+            position: relative;
+        }
+        .con01 .left h1 span{
+            vertical-align: baseline;
+            font-size: 40px;
+            font-weight: 400;
+        }
+        .con01 .left p{
+            font-size: 35px;
+            font-weight: 400;
+        }
+        .con01 .left p span{
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .con01 .left h1 span::before{
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            top: -5px;
+            right: -25px;
+        }
+        .con01 .right ul{
+            width: 65%;
+            margin: 0 0 0 auto;
+            grid-gap: 15px;
+        }
+        .con01 .right ul li{
+            height: 100%;
+            border: 1px solid #D3D3D3;
+            text-align: left;
+            padding: 50px 40px;
+            transition: transform .2s linear;
+        }
+        .con01 .right ul li:hover{
+            border: 3px solid #3181F3;
+            box-sizing: border-box;
+            transform: translate(0,-10px);
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+        }
+        .con01 .right ul li:hover i{
+            transform: rotate(405deg);
+        }
+        .con01 .right ul li i{
+            display: block;
+            font-size: 59px;
+            transform: rotate(45deg);
+            margin: 43px 0 76px;
+            transition: transform 1s;
+            text-align: center;
+        }
+
+        .con01 .right ul li:nth-child(1) i{
+            color: #2C85F4;
+        }
+        .con01 .right ul li:nth-child(2) i{
+            color: #7136EB;
+        }
+        .con01 .right ul li:nth-child(3) i{
+            color: #3FE2A0;
+        }
+        .con01 .right ul li h2{
+            font-size: 13px;
+            font-weight: 300;
+            background-color: black;
+            color: white;
+            display: inline-block;
+            border-radius: 20px;
+            padding: 2px 10px;
+        }
+        .con01 .right ul li:hover h2{
+            background-color: #2C85F4;
+        }
+        .con01 .right ul li h3{
+            font-size: 20px;
+            margin: 15px 0 3px;
+        }
+        .con01 .right ul li p{
+            font-size: 17px;
+        }
+
+        /* con02 */
+        .con02{
+            width: auto;
+            height: 226px;
+            background-image: url(./img/con02_bg.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+        }
+        .con02 .text{
+            text-align: left;
+            margin-left: 300px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .con02 h2{
+            font-size: 40px;
+        }
+        .con02 p{
+            font-size: 20px;
+            font-weight: 300;
+        }
+        .con02 button{
+            background-color: white;
+            border: 0.5px solid black;
+            font-size: 17px;
+            vertical-align: text-bottom;
+            padding: 7px 20px;
+            position: absolute;
+            top: 50%;
+            right: 18%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            transition: all .5s;
+        }
+        .con02 button .arrow{
+            vertical-align: text-bottom;
+            margin-left: 5px;
+            font-size: 19px;
+        }
+        .con02 button:hover{
+            background-color: #744DF6;
+            color: white;
+        }
+        .con02 button:hover .arrow{
+            color: white;
+        }
+
+        /* con03 / 공지사항 */
+        .con03{
+            margin: 80px 0px;
+        }
+        .con03 .wrap{
+            width: 900px;
+        }
+        .con03 .grid{
+            grid-template-columns: 1fr;
+            grid-gap: 40px;
+        }
+        .con03 .grid li .title::after{
+            content: "";
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #C9C7CB;
+            margin: 20px 0;
+        }
+        .con03 .grid li .title h1{
+            line-height: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            padding-left: 20px;
+            background: url(./img/notice_tit.png) no-repeat left center;
+        }
+        .con03 .grid li .title .more{
+            width: 40px;
+            height: 40px;
+            position: relative;
+            transition: transform .5s;
+        }
+        .con03 .grid li .title:hover .more{
+            transform: rotate(180deg);
+        }
+        .con03 .grid li .title .more span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 20px;
+            height: 2px;
+            background-color: black;
+        }
+        .con03 .grid li .title .more span:nth-child(1){
+            transform: translate(-50%,-50%) rotate(90deg);
+        }
+        .con03 .grid li .list{
+            margin-top: 10px;
+            padding: 0px 10px;
+        }
+        
+        .con03 .grid li .list li{
+            width: 100%;
+            
+        }
+        .con03 .grid li .list li a{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 90px;
+            grid-gap: 0px;
+            margin: 2px 0px;
+            padding: 0 20px;
+        }
+        .con03 .grid li .list li a .subject{
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 30px;
+        }
+        .con03 .grid li .list li a .date{
+            line-height: 30px;
+            color:#666;
+        }
+        .con03 .grid li .list li:hover a{
+            background-color: #F1F0F2;
+        }
+
+        /* con04 */
+        .con04{
+            margin: 200px 0;
+            overflow: hidden;
+        }
+        .con04 .title{
+            margin-bottom: 120px;
+        }
+        .con04 .title h2{
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .con04 .title h1{
+            font-size: 50px;
+        }
+        .con04 .title p{
+            font-size: 25px;
+        }
+        .con04 .monitor{
+            display: inline-block;
+            width: 400px;
+            height: 400px;
+            position: relative;
+            border: 2px solid #407BFF;
+            box-sizing: border-box;
+        }
+        .con04 .monitor .film{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            white-space: nowrap;
+            font-size: 0px;
+            transition: transform 1s;
+        }
+        .con04 .monitor .film .slide{
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background-color: #ccc;
+            padding: 0 30px;
+        }
+        .con04 .monitor .film .customer{
+            background-image: url(./img/con_img01.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+        }
+        .con04 .monitor .title{
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .con04 .monitor i{
+            font-size: 55px;
+            color: white;
+        }
+        .con04 .monitor h3{
+            font-size: 30px;
+            margin: 10px 0;
+            color: white;
+        }
+        .con04 .monitor h4{
+            font-size: 18px;
+            font-weight: 400;
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_tit">
+                <div class="wrap">
+                    <div class="img">
+                        <a href="#">
+                            <img src="./img/hLogo.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li>Service</li>
+                        <li>Product</li>
+                        <li>LOGIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBox">
+                <div class="wrap">
+                    <div class="grid">
+                        <ul>
+                            <li><a href="#">서비스 소개</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">MY PAGE</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <!-- side menu -->
+        <div class="side_menu">
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="top">
+                                <span class="material-icons-round material-icons">
+                                    record_voice_over
+                                    </span>
+                                <h2>1:1문의</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="bottom">
+                                <span class="material-icons-round material-icons">
+                                    campaign
+                                    </span>
+                                <h2>NOTICE</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- mainSlider -->
+        <div class="mainSlider">
+            <!-- Swiper -->
+            <div class="swiper-container slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"></div>
+                    <div class="swiper-slide"></div>
+                </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination pagin"></div>
+            </div>
+        </div>
+        <!-- 공지사항 롤링 -->
+        <div class="notice">
+            <div class="wrap">
+                <ul class="rolling">
+                    <li><h3><a href="#"><span class="material-icons-round material-icons">
+                        navigate_next
+                        </span>새로운 공지사항1이 업데이트 되었습니다.</a></h3></li>
+                    <li><h3><a href="#"><span class="material-icons-round material-icons">
+                        navigate_next
+                        </span>새로운 공지사항2이 업데이트 되었습니다.</a></h3></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- con01 -->
+        <div class="con01">
+            <div class="wrap">
+                <div class="left">
+                    <h1>COMPANY <span>만의</span></h1>
+                    <p>특별한 <span>상품구성</span></p>
+                </div>
+                <div class="right">
+                    <ul class="grid">
+                        <li>
+                            <i class="fas fa-dice-one"></i>
+                            <h2>구성1</h2>
+                            <h3>상품구성 1</h3>
+                            <p>&#8361; 1,800,000</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-dice-two"></i>
+                            <h2>구성2</h2>
+                            <h3>상품구성 2</h3>
+                            <p>&#8361; 3,600,000</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-dice-four"></i>
+                            <h2>구성3</h2>
+                            <h3>상품구성 3</h3>
+                            <p>&#8361; 7,200,000</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- con02 -->
+        <div class="con02">
+            <div class="wrap">
+                <div class="text">
+                    <h2>Product Line</h2>
+                    <p>특별한 상품구성에 대해서 더 자세히 알아보고 구매하기</p>
+                </div>
+                <button>BUY NOW <span class="material-icons-round material-icons arrow">
+                    double_arrow
+                    </span></button>
+            </div>
+        </div>
+
+        <!-- con04 -->
+        <div class="con04">
+            <div class="wrap">
+                <div class="title">
+                    <h2>company</h2>
+                    <h1>" BUSINESS COMPANY "</h1>
+                    <p>Project title</p>
+                </div>
+                <div class="monitor">
+                    <div class="film">
+                        <div class="slide customer">
+                            <div class="title">
+                                <i class="fas fa-child"></i>
+                                <h3>고객</h3>
+                                <h4>사용자의 다양하고<br>편리한 서비스 추구</h4>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="title">
+                                <i class="fas fa-child"></i>
+                                <h3>고객</h3>
+                                <h4>사용자의 다양하고<br>편리한 서비스 추구</h4>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="title">
+                                <i class="fas fa-child"></i>
+                                <h3>고객</h3>
+                                <h4>사용자의 다양하고<br>편리한 서비스 추구</h4>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="title">
+                                <i class="fas fa-child"></i>
+                                <h3>고객</h3>
+                                <h4>사용자의 다양하고<br>편리한 서비스 추구</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- con03/공지사항 -->
+        <div class="con03">
+            <div class="wrap">
+                <ul class="grid">
+                    <li>
+                        <div class="title">
+                            <div class="flex">
+                                <h1>공지사항</h1>
+                                <a href="#" class="more">
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="list">
+                            <li>
+                                <a href="#">
+                                    <div class="subject">
+                                        공지사항이 업데이트되었습니다.
+                                    </div>
+                                    <div class="date">2021.07.26</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="subject">
+                                        많은 이용 부탁드립니다.
+                                    </div>
+                                    <div class="date">2021.07.26</div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="subject">
+                                        프로그램에 대한 자세한 설명은 공지사항에 업데이트가 됩니다.
+                                    </div>
+                                    <div class="date">2021.07.26</div>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="wrap">
+            <ul class="flex">
+                <li>
+                    <a href="#" class="fLogo">
+                        <img src="./img/fLogo.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    법인명(상호) : 주식회사 컴퍼니<br>
+                    대표자(성명) : 000 <br>
+                    사업자등록번호 : 612-12-34567 통신판매업신고번호 : 제 2021-서울강남-01245  <br>
+                    주소 : (우 02356) 서울특별시 강남구 중앙동 123-12, 1층 컴퍼니 <br>
+                    TEL : 02-123-4567 팩스 : 02-123-4567 이메일 : 1232456@naver.com <br>
+                    COPYRIGHT(C) COMPANY ALL RIGHTS RESERVERED
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script>
+//mainSlider
+var slide = new Swiper('.mainSlider .slide', {
+        
+        //무한슬라이드
+        loop: true,
+        
+        //페이드 인& 페이드 아웃 (화면전환)
+        effect: 'fade',
+        
+        //자동슬라이드
+        autoplay:{
+            //시간 1000=1s
+            delay:2500,
+            //마우스로 한번 슬라이드 하면 멈춤
+            disableOnInteraction: false,
+        },
+        
+      pagination: {
+        el: '.pagin',
+      },
+    });
+    // 공지사항롤링
+    $(document).ready(function(){
+        var height = $(".notice").height();
+        var num = $(".rolling li").length;
+        var max = height * num;
+        var move = 0;
+        function noticeRolling(){
+            move += height;
+            $(".rolling").animate({"top":-move},1000,function(){
+                if(move >= max){
+                    $(this).css("top",0);
+                    move = 0;
+                };
+            });
+        };
+        noticeRollingOff = setInterval(noticeRolling,2500);
+        $(".rolling").append($(".rolling li").first().clone());
+        $(".rolling_stop").click(function(){
+            clearInterval(noticeRollingOff);
+        });
+        $(".rolling_start").click(function(){
+            noticeRollingOff = setInterval(noticeRolling,2500);
+        });
+    });
+    //con04
+    $(function(){
+        
+        let slide = $(".monitor .film .slide");
+        const film = $(".monitor .film");
+        
+        let index = 0;
+        
+        slide.last().insertBefore(slide.first());
+        
+        film.css("left","-100%");
+        
+        
+        /* 
+            left = 이동시 0초만에 이동
+            transform = 이동시 1초만에 이동
+        */
+        
+        setInterval(function(){
+            slide = $(".monitor .film .slide");
+            
+            /* 0초만에 일어남 */
+            slide.first().insertAfter(slide.last());
+            film.css("left", (index*100) + "%");
+            
+            index++;
+            
+            /* 1초만에 일어남*/
+            film.css("transform","translateX(-" + index * 100 + "%)");
+            
+        },3000);
+        
+        
+    })
+    
+</script>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title></title>
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./css/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        header{
+            padding: 20px 0;
+        }
+        .menu{
+            margin-bottom: 0;
+        }
+        .menu li{
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+        }
+        .menu li .material-icons{
+            font-size: 35px;
+        }
+        .menu li ol{
+            position: absolute;
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90px;
+            max-height: 0px;
+            overflow: hidden;
+            z-index: 9;
+            transition: max-height .5s;
+        }
+        
+        .menu li:hover ol{
+            max-height: 500px;
+        }
+        
+        .menu li ol li{
+            width: 100%;
+        }
+        .menu li ol li a{
+            width: 100%;
+            line-height: 42px;
+            background-color: #444;
+            color:white;
+        }
+
+        /* mainslider */
+        .mainSlider{
+            position: relative;
+        }
+        .mainSlider .slide{
+            width: 100%;
+            height: 550px;
+            position: relative;
+        }
+        .mainSlider .swiper-slide .title{
+            position: absolute;
+            top: 30%;
+            left: 0;
+            background-color: #eee;
+        }
+        .mainSlider .swiper-slide .title h1{
+            font-size: 50px;
+        }
+        .mainSlider .swiper-slide .title .img{
+            width: 100%;
+        }
+        .mainSlider .swiper-slide .title .img{
+            width: auto;
+            height: 100px;
+        }
+        .mainSlider .swiper-slide:first-child{
+            background-color: #eee;
+        }
+        .mainSlider .swiper-slide:last-child{
+            background-color: #eee;
+        }
+        .mainSlider .swiper-slide .title:first-child h1{
+            color: white;
+        }
+        .mainSlider .swiper-slide .title:last-child h1{
+            color: black;
+        }
+        .mainSlider .pagin{
+            position: absolute;
+            top: 50%;
+            left: 30%;
+        }
+        .mainSlider .pagin .swiper-pagination-bullet{
+            opacity: 1;
+            background-color: white;
+            margin-right: 8px;
+        }
+        .mainSlider .pagin .swiper-pagination-bullet.swiper-pagination-bullet-active{
+            background-color: black;
+        }
+
+        /* menu */
+        .menu_sub{
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 99;
+            background-color: cornflowerblue;
+        }
+        .menu_sub .flex{
+            justify-content: center;
+        }
+        .menu_sub .grid{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            margin-bottom: 0;
+        }
+        .menu_sub ul li a{
+            width: 101%;
+            line-height: 44px;
+            color: white;
+            padding: 17px 25px;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            text-decoration: none;
+            transition: all .3s;
+        }
+        .menu_sub ul li a span{
+            display: block;
+            font-size: 40px;
+        }
+        .menu_sub ul li:hover a{
+            transform: scale(1.1);
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.5);
+            background-color: blue;
+        }
+
+        /* 공지사항 롤링 */
+        .notice_tit{
+            width: 100%;
+            background-color: #eee;
+            position: relative;
+        }
+        .notice_tit h2 a, .notice_tit h2 a span{
+            font-size: 18px;
+            vertical-align: middle;
+            z-index: 10;
+            margin: 0;
+        }
+        .notice_tit h2 a{
+            position: absolute;
+            top: 50%;
+            left: 18%;
+            transform: translateY(-50%);
+            text-decoration: none;
+        }
+        .notice_tit h2 a span{
+            font-size: 25px;
+        }
+        .notice_tit .slide{
+            width: 100%;
+            height: 60px;
+            padding: 10px 0;
+        }
+        .notice_tit .swiper-slide{
+            background-color: #eee;
+        }
+
+        /* con01 */
+        .con01{
+            padding: 100px 0;
+        }
+        .con01 .grid{
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 50px;
+        }
+        .con01 .grid a{
+            text-decoration: none;
+        }
+        .con01 ul li{
+            width: 100%;
+            background-color: #f5f5f5;
+            padding: 200px 150px;
+            position: relative;
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+        }
+        .con01 ul li:nth-child(odd){
+            margin-top: 50px;
+        }
+        .con01 ul li:nth-child(2){
+            margin-bottom: 50px;
+        }
+        .con01 ul li:nth-child(4){
+            margin-bottom: 50px;
+        }
+        .con01 ul li a{
+            width: 100%;
+            display: block;
+        }
+        .con01 ul li:hover a{
+            color: black;
+        }
+        .con01 ul li:hover{
+            background-color:black;
+            transition: all .5s;
+        }
+        .con01 ul li:hover .total p{
+            color: white;
+        }
+        .con01 ul li:hover .total h2{
+            color: white;
+        }
+        .con01 ul li .total{
+            text-align: left;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .con01 ul li .total span{
+            font-size: 65px;
+            margin-bottom: 30px;
+        }
+        .con01 ul li:nth-child(1) .total span{
+            color: purple;
+        }
+        .con01 ul li:nth-child(2) .total span{
+            color: orange;
+        }
+        .con01 ul li:nth-child(3) .total span{
+            color: greenyellow;
+        }
+        .con01 ul li:nth-child(4) .total span{
+            color: red;
+        }
+        .con01 ul li .total p{
+            font-size: 20px;
+        }
+        .con01 .right{
+            text-align: left;
+        }
+        .con01 .right h1{
+            position: relative;
+        }
+        .con01 .right h1::after{
+            content: "";
+            display: block;
+            width: 100%;
+            height: 9px;
+            position: absolute;
+            bottom: 3px;
+            background-color: rgba(155, 141, 241, 0.9);
+            z-index: -1;
+        }
+        .con01 .right p{
+            font-size: 16px;
+            margin-top: 50px;
+        }
+
+        /* con03 / 공지사항 */
+        .con03{
+            margin: 80px 0px;
+        }
+        .con03 .wrap{
+            width: 900px;
+        }
+        .con03 .grid{
+            grid-template-columns: 1fr;
+            grid-gap: 40px;
+        }
+        .con03 .grid li .title::after{
+            content: "";
+            display: block;
+            width: 100%;
+            border-bottom: 1px solid #C9C7CB;
+            margin: 20px 0;
+        }
+        .con03 .grid li .title h1{
+            line-height: 50px;
+            font-size: 25px;
+            font-weight: bold;
+            padding-left: 20px;
+            background: url(./img/notice_tit.png) no-repeat left center;
+        }
+        .con03 .grid li .title .more{
+            width: 40px;
+            height: 40px;
+            position: relative;
+            transition: transform .5s;
+        }
+        .con03 .grid li .title:hover .more{
+            transform: rotate(180deg);
+        }
+        .con03 .grid li .title .more span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 20px;
+            height: 2px;
+            background-color: black;
+        }
+        .con03 .grid li .title .more span:nth-child(1){
+            transform: translate(-50%,-50%) rotate(90deg);
+        }
+        .con03 .grid li .list{
+            margin-top: 10px;
+            padding: 0px 10px;
+        }
+        
+        .con03 .grid li .list li{
+            width: 100%;
+            
+        }
+        .con03 .grid li .list li a{
+            width: 100%;
+            margin: 2px 0px;
+            padding: 0 20px;
+        }
+        .con03 .grid li .list li a .subject{
+            text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 30px;
+        }
+        .con03 .grid li .list li a .date{
+            line-height: 30px;
+            color:#666;
+        }
+        .con03 .grid li .list li .date{
+            padding-right: 20px;
+        }
+        .con03 .grid li .list li:hover{
+            background-color: #F1F0F2;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="wrap">
+            <div class="flex">
+                <div class="img">
+                    <a href="#">
+                        <img src="./img/hLogo.png" alt="">
+                    </a>
+                </div>
+                <ul class="menu">
+                    <li>
+                        <span class="material-icons-round material-icons">
+                            person_outline
+                            </span>
+                        <ol>
+                            <li><a href="#">LOGIN</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">MY PAGE</a></li>
+                        </ol>
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- mainSlider -->
+        <div class="mainSlider">
+            <!-- Swiper -->
+            <div class="swiper-container slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="title wrap">
+                            <h1>BUSINESS TITLE 1</h1>
+                            <div class="img">
+                                <img src="./img/img01.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title wrap">
+                            <h1>BUSINESS TITLE 2</h1>
+                        </div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination pagin"></div> 
+                </div>
+            </div>
+            
+            <!-- menu -->
+            <nav class="menu_sub">
+                <div class="flex">
+                    <ul class="grid">
+                        <li><a href="#"><span class="material-icons-round material-icons">
+                            insights
+                            </span>서비스 소개</a></li>
+                        <li><a href="#"><span class="material-icons-round material-icons">
+                            add
+                            </span>상품</a></li>
+                        <li><a href="#"><span class="material-icons-round material-icons">
+                            stream
+                            </span>공지사항</a></li>
+                        <li><a href="#"><span class="material-icons-round material-icons">
+                            safety_divider
+                            </span>1:1 문의</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+
+        <!-- 공지사항 롤링 -->
+        <div class="notice_tit">
+            <div class="wrap">
+                <h2><a href="#">공지사항 <span class="material-icons-round material-icons">
+                chevron_right
+                    </span></a></h2>
+            </div>
+            <div class="swiper-container slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="title wrap">
+                            <p>새로운 공지사항1이 업데이트 되었습니다.</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="title wrap">
+                            <p>많은 이용 부탁드립니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- con01 -->
+        <div class="con01">
+            <div class="wrap">
+                <div class="flex">
+                    <ul class="grid">
+                        <li>
+                            <a href="#">
+                                <div class="total">
+                                    <span class="material-icons-round material-icons">
+                                        analytics
+                                        </span>
+                                    <p>TITLE</p>
+                                    <h2>Business Product</h2>
+                                </div>
+                            </a>
+                        </li>
+                        <li><a href="#">
+                            <div class="total">
+                                <span class="material-icons-round material-icons">
+                                    savings
+                                    </span>
+                                <p>TITLE</p>
+                                <h2>Business Product</h2>
+                            </div>    
+                        </a></li>
+                        <li><a href="#">
+                            <div class="total">
+                                <span class="material-icons-round material-icons">
+                                    card_giftcard
+                                    </span>
+                                <p>TITLE</p>
+                                <h2>Business Product</h2>
+                            </div>    
+                        </a></li>
+                        <li><a href="#">
+                            <div class="total">
+                                <span class="material-icons-round material-icons">
+                                    widgets
+                                    </span>
+                                <p>TITLE</p>
+                                <h2>Business Product</h2>
+                            </div>    
+                        </a></li>
+                    </ul>
+                    <div class="right">
+                        <h1>LOOK HERE !<br>New Product Line Up</h1>
+                        <p>매일 업데이트 되는 다양한 상품구성을<br>(COMPANY NAME)에서 확인해보세요</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- con03/공지사항 -->
+        <div class="con03">
+            <div class="wrap">
+                <ul class="grid">
+                    <li>
+                        <div class="title">
+                            <div class="flex">
+                                <h1>공지사항</h1>
+                                <a href="#" class="more">
+                                    <span></span>
+                                    <span></span>
+                                </a>
+                            </div>
+                        </div>
+                        <ul class="list">
+                            <li class="flex">
+                                <a href="#">
+                                    <div class="subject">
+                                        공지사항이 업데이트되었습니다.
+                                    </div>
+                                </a>
+                                <div class="date">2021.07.26</div>
+                            </li>
+                            <li class="flex">
+                                <a href="#">
+                                    <div class="subject">
+                                        많은 이용 부탁드립니다.
+                                    </div>
+                                </a>
+                                    <div class="date">2021.07.26</div>
+                                
+                            </li>
+                            <li class="flex">
+                                <a href="#">
+                                    <div class="subject">
+                                        프로그램에 대한 자세한 설명은 공지사항에 업데이트가 됩니다.
+                                    </div>
+                                </a>
+                                    <div class="date">2021.07.26</div>
+                                
+                            </li>
+                        </ul>
+                    </li>
+            </div>
+        </div>
+    </main>
+</body>
+<script>
+    //mainSlider
+    var slide = new Swiper('.mainSlider .slide', {
+            
+            //무한슬라이드
+            loop: true,
+            
+            //페이드 인& 페이드 아웃 (화면전환)
+            effect: 'fade',
+            
+            //자동슬라이드
+            autoplay:{
+                //시간 2000=1s
+                delay:2500,
+                //마우스로 한번 슬라이드 하면 멈춤
+                disableOnInteraction: false,
+            },
+            
+        pagination: {
+            el: '.pagin',
+        },
+        });
+    //공지사항 롤링
+    var slide = new Swiper(".notice_tit .slide", {
+        direction: "vertical",
+        loop: true,
+        effect: 'fade',
+        autoplay:{
+                delay:2500,
+                disableOnInteraction: false,
+            },
+      });
+</script>
+</html>

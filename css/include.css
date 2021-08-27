@@ -1,0 +1,96 @@
+.menu{
+    background-color: white;
+    position: relative;
+}
+.menu .menu_tit{
+    padding: 30px;
+}
+.menu .menu_tit .img{
+    width: 100%;
+    display: block;
+}
+.menu .menu_tit .img a{
+    display: block;
+}
+.menu .menu_tit .wrap{
+    position: relative;
+}
+.menu .menu_tit img{
+    width: auto;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.menu .menu_tit ul{
+    width: 33%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    margin: 0 0 0 auto;
+    
+}
+.menu .menu_tit ul li:hover{
+    color: #3181F3;
+}
+.menu .menu_tit ul li a{
+    line-height: 40px;
+    width: 100%;
+    color:black;
+}
+.menu .menu_tit ul li:hover .menu .menuBox{
+    
+    
+}
+.menu .menuBox{
+    position: absolute;
+    width: 100%;
+    top: 100%;
+    left: 0%;
+    z-index: 9;
+    background-color: #f5f5f5;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.menu:hover .menuBox{
+    max-height: 600px;
+}
+
+.menu .menuBox .grid{
+    width: 33%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0px;
+    margin: 20px 0 40px auto;
+}
+.menu .menuBox .grid ul li{
+    width: 100%;
+}
+.menu .menuBox .grid ul li a{
+    width: 100%;
+    line-height: 40px;
+}
+.menu .menuBox .grid ul li:hover a{
+    color: #C7DCFF;
+}
+
+/* footer */
+footer{
+    background-color: #f5f5f5;
+    padding: 30px 0px;
+}
+footer .flex{
+    justify-content: flex-start;
+}
+footer ul li{
+    color: #717171;
+    text-align: left;
+}
+footer ul li img{
+    width: auto;
+    height: 21px;
+    margin-right: 150px;
+}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width" />
+    <title>notice</title>
+    <!-- <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.png"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"/>
+    <link rel="stylesheet" href="./css/setup.css">
+    <link rel="stylesheet" href="./css/include.css">
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="./css/jquery.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* side menu */
+        .side_menu{
+            display: inline-block;
+            position: fixed;
+            top: 60%;
+            right: -10%;
+            z-index: 9;
+        }
+        .side_menu li{
+            display: block;
+            margin-bottom: 3px;
+        }
+        .side_menu li h2{
+            font-weight: 400;
+            font-size: 13px;
+            margin: 0;
+        }
+        .side_menu li .material-icons{
+            font-size: 30px;
+            margin-bottom: 2px;
+        }
+        .side_menu .top, .side_menu .bottom{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0,0,0,0.7);
+            border-radius: 3px;
+            display: inline-block;
+            padding: 5px;
+            color: white;
+        }
+
+        /* notice */
+        .notice{
+            width: 100%;
+            padding-top: 100px;
+        }
+        .notice h1{
+            font-size: 38px;
+            margin-bottom: 50px;
+            color: black;
+            font-weight: bold;
+        }
+        .notice p{
+            text-align: left;
+            color: #999999;
+        }
+        .notice p span{
+            color: black;
+            font-weight: bold;
+        }
+        .notice table{
+            width: 100%;
+            border-top: 1px solid black;
+        }
+        .notice table th{
+            text-align: center;
+            font-size: 16px;
+            padding: 20px 0;
+            position: relative;
+        }
+        .notice table th::after{
+            content: "";
+            display: block;
+            width: 1px;
+            height: 15px;
+            background-color: #c7c7c7;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+        }
+        .notice table th:last-child:after{
+            display: none;
+        }
+        .notice table thead{
+            border-bottom: 1px solid #c7c7c7;
+        }
+        .notice table td{
+            font-size: 16px;
+            color: #515151;
+            font-weight: 500;
+            padding: 15px 0;
+            border-bottom: 1px solid #c7c7c7;
+        }
+        .notice table td a{
+            font-size: 16px;
+            color: #515151;
+            font-weight: 500;
+        }
+        .notice table td:nth-child(2){
+            text-align: left;
+            padding-left: 40px;
+        }
+        .notice table td:nth-child(2):hover{
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_tit">
+                <div class="wrap">
+                    <div class="img">
+                        <a href="#">
+                            <img src="./img/hLogo.png" alt="">
+                        </a>
+                    </div>
+                    <ul>
+                        <li>Service</li>
+                        <li>Product</li>
+                        <li>LOGIN</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="menuBox">
+                <div class="wrap">
+                    <div class="grid">
+                        <ul>
+                            <li><a href="#">서비스 소개</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">상품</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                            <li><a href="#">MY PAGE</a></li>
+                            <li><a href="#">1:1 문의</a></li>
+                            <li><a href="#">공지사항</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
+    </header>
+    <main>
+        <!-- side menu -->
+        <div class="side_menu">
+            <div class="wrap">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="top">
+                                <span class="material-icons-round material-icons">
+                                    record_voice_over
+                                    </span>
+                                <h2>1:1문의</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="bottom">
+                                <span class="material-icons-round material-icons">
+                                    campaign
+                                    </span>
+                                <h2>NOTICE</h2>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 공지사항 -->
+        <div class="notice">
+            <div class="wrap">
+                <h1>공지사항</h1>
+                <table>
+                    <p>총 <span>2개</span>의 게시물</p>
+                    <colgroup>
+                        <col style="width: 10%;">
+                        <col style="width: 80%;">
+                        <col style="width: 10%;">
+                    </colgroup>
+                    <thead>
+                        <th>No</th>
+                        <th>제목</th>
+                        <th>등록일</th>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="">새로운 공지사항 오픈!</a></td>
+                        <td>2021.07.28</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="">새로운 공지사항 오픈!</a></td>
+                        <td>2021.07.28</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
